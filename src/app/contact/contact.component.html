@@ -1,0 +1,27 @@
+<div class="col-sm-6 float-right">
+	<div class="jumbotron box-contacto">
+		<h2 class="display-5">Contactame</h2>
+		<div class="form-container">
+			<form (ngSubmit)="processForm()">
+				<mat-form-field>
+					<input matInput name="nombre" placeholder="Nombre" [(ngModel)]="nombre"  required minlength="3">
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput name="email" placeholder="Correo" [(ngModel)]="email" type="email" required email>
+				</mat-form-field>
+				<mat-form-field>
+					<mat-select placeholder="Motivo" [(ngModel)]="motivo" name="motivo" required>
+						<mat-option [value]="1" value="1">Mensaje</mat-option>
+						<mat-option [value]="2" value="2">Cotización</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field>
+					<textarea matInput name="mensaje" placeholder="Mensaje" [(ngModel)]="mensaje" required></textarea>
+				</mat-form-field>
+				<div class="button-row">
+					<button mat-raised-button color="primary"><mat-icon class="example-icon">done</mat-icon> Enviar</button>
+				</div>
+		</form>
+		</div>
+	</div>
+</div>

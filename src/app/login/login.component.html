@@ -1,0 +1,26 @@
+
+<div class="col-sm-4 mx-auto ">
+	<mat-card style="margin-left:25%;" class="example-card">
+		<mat-card-header>
+			<mat-card-title><h2>Ingreso al sistema</h2></mat-card-title>
+			<mat-card-subtitle>Por favor ingrese sus datos</mat-card-subtitle>
+		</mat-card-header>
+		<mat-card-content>
+			<div class="example-container">
+				<mat-form-field>
+					<input matInput minlength="4" [(ngModel)]="username" placeholder="Usuario" required>
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput minlength="4" [(ngModel)]="password" placeholder="Password" [type]="hide ? 'password' : 'text'" required>
+					<mat-icon style="cursor:pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+				</mat-form-field>
+			</div>
+		</mat-card-content>
+		<mat-card-actions>
+			<div class="button-row ">
+				<button [disabled]="username === '' || password === ''" (click)="login()" mat-raised-button color="primary"><mat-icon class="example-icon">done</mat-icon> Ingresar</button>
+				<button (click)="clean()" mat-raised-button color="accent"><mat-icon class="example-icon">backspace</mat-icon> Limpiar</button>
+			</div>
+		</mat-card-actions>
+	</mat-card>
+</div>

@@ -1,0 +1,33 @@
+<mat-sidenav-container color="primary" class="example-container" >
+	<mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+	(closed)="events.push('close!')">
+	<mat-list>
+		<mat-list-item >
+			<mat-icon mat-list-icon>home</mat-icon>
+			<h4 mat-line>Inicio</h4>
+		</mat-list-item>
+		<mat-list-item >
+			<mat-icon mat-list-icon>dashboard</mat-icon>
+			<h4 mat-line>Dashboard</h4>
+		</mat-list-item>
+		<mat-list-item>
+			<mat-icon mat-list-icon>contact_mail</mat-icon>
+			<h4 mat-line>Contacto</h4>
+		</mat-list-item>
+		<mat-divider></mat-divider>
+		<mat-list-item>
+			<mat-list-item>
+				<mat-icon mat-list-icon>exit_to_app</mat-icon>
+				<h4 mat-line>Salir</h4>
+			</mat-list-item>
+		</mat-list-item>
+	</mat-list>
+</mat-sidenav>
+<mat-sidenav-content>
+	<p>
+		<button mat-raised-button color="primary" (click)="sidenav.toggle()">
+			<mat-icon class="example-icon">more_horiz</mat-icon>
+		</button>
+	</p>
+</mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,18 @@
+<header>
+	<mat-toolbar color="primary">
+		<mat-toolbar-row>
+			<div class="col float-left">
+				<span class="navbar-brand">
+					<a class="navabar-item" href="#">
+						<img style="max-height: 3em;" src="assets/img/morty-logo.png">
+					</a>
+				</span>
+			</div>
+			<div style="margin-left: 50%" class="col float-right">
+				<a class="navbar-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <button mat-raised-button color="primary">Inicio</button></a>
+				<a class="navbar-item" routerLinkActive="active" routerLink="/dashboard"> <button mat-raised-button color="primary">Dash</button></a>
+				<a class="navbar-item" routerLinkActive="active" routerLink="/contact"> <button mat-raised-button color="primary">Contacto</button></a>
+			</div>
+		</mat-toolbar-row>
+	</mat-toolbar>
+</header>

@@ -1,0 +1,15 @@
+ <div class="container">
+ 	<div class="row">
+ 		<h2 class="display-4">Users Section</h2>
+ 	</div>
+ 	<div *ngIf="users" class="row">
+ 		<div class="col list-group">
+ 			<a *ngFor="let user of users" class="list-group-item" [routerLink]="['/dashboard/users', user.username]"> 
+ 				{{ user.name }}
+ 			</a>
+ 		</div>
+ 		<div class="col">
+ 			<router-outlet></router-outlet>
+ 		</div>
+ 	</div>
+ </div>
