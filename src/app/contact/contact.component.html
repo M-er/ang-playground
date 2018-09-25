@@ -1,13 +1,13 @@
 <div class="col-sm-6 float-right">
 	<div class="jumbotron box-contacto">
 		<h2 class="display-5">Contactame</h2>
-		<div class="form-container">
+		<div class="container form-container">
 			<form (ngSubmit)="processForm()">
 				<mat-form-field>
 					<input matInput name="nombre" placeholder="Nombre" [(ngModel)]="nombre"  required minlength="3">
 				</mat-form-field>
-				<mat-form-field>
-					<input matInput name="email" placeholder="Correo" [(ngModel)]="email" type="email" required email>
+				<mat-form-field style="margin-left:1em">
+					<input matInput name="apellido" placeholder="Apellido" [(ngModel)]="apellido" type="apellido" required minlength="3">
 				</mat-form-field>
 				<mat-form-field>
 					<mat-select placeholder="Motivo" [(ngModel)]="motivo" name="motivo" required>
@@ -15,13 +15,17 @@
 						<mat-option [value]="2" value="2">Cotización</mat-option>
 					</mat-select>
 				</mat-form-field>
+				<mat-form-field style="margin-left:1em">
+					<input matInput name="email" placeholder="Correo" [(ngModel)]="email" type="email" required email>
+				</mat-form-field>
 				<mat-form-field>
 					<textarea matInput name="mensaje" placeholder="Mensaje" [(ngModel)]="mensaje" required></textarea>
 				</mat-form-field>
 				<div class="button-row">
 					<button mat-raised-button color="primary"><mat-icon class="example-icon">done</mat-icon> Enviar</button>
+					<button (click)="clean($event)" mat-raised-button color="warn"><mat-icon class="example-icon">clear_all</mat-icon> Limpiar </button>
 				</div>
-		</form>
+			</form>
 		</div>
 	</div>
 </div>
