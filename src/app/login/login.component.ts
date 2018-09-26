@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
-
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -13,7 +12,7 @@ const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/js
 })
 @Injectable()
 export class LoginComponent implements OnInit {
-	private apiUrl: string = 'http://localhost:8080/index.php/';
+	private apiUrl: string = 'http://localhost:8000/index.php/';
 	hide = true;
 	username = "";
 	password = "";
@@ -29,16 +28,12 @@ export class LoginComponent implements OnInit {
 		this.username = "";
 		this.password = "";
 	}
-
 	login() {
 		var usuario = {'username':this.username,'password':this.password};
 
 		this.http.post(this.apiUrl+'login/',usuario).subscribe(data => {
-			console.log(data);
 			this.openSnackBar(data['message'],data['status']);
-			//console.log(data);
 		});
-		//this.http.post(this.apiUrl+'encripta/',this.password).subscribe(data => { console.log(data); });
 	}
 	openSnackBar(message: string, action: string) {
 		this.snackBar.open(message, action, {

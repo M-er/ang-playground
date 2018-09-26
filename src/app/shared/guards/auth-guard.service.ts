@@ -6,19 +6,20 @@ import { Component, OnInit } from '@angular/core';
 
  @Injectable()
  export class AuthGuard implements CanActivate, CanActivateChild {
-  private apiUrl: string = 'http://localhost:8080/index.php/';
+  private apiUrl: string = 'http://localhost:8000/';
   private rta: boolean = false;
   constructor(private http: HttpClient){}
 
  	canActivate() {
-    this.http.get(this.apiUrl+'logueado/').subscribe(data => {
-    });
-    return true;
+    this.isLogged();
+    return this.rta;
  	}
 
  	canActivateChild() {
  		console.log('checking child route access');
  		return true;
  	}
-
+  isLogged(){
+    this.http.get(this.apiUrl+'logueado/').subscribe(data => {this.rta = true;});
+  }
  }

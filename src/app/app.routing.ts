@@ -10,8 +10,9 @@ const appRoutes: Routes = [
     path: '',
     component: HomeComponent
   },
+
   { path: '**', component: NotFoundComponent },
-  { path: './contact', component: ContactComponent }
+  { path: './contact', component: ContactComponent },
 ];
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

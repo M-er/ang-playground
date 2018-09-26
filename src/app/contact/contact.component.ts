@@ -20,7 +20,13 @@ export class ContactComponent implements OnInit {
 
   constructor(private http: HttpClient,public snackBar: MatSnackBar) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.nombre = "";
+    this.motivo = "";
+    this.email = "";
+    this.mensaje = "";
+    this.apellido = "";
+  }
   clean($event){
     $event.preventDefault();
     this.nombre = "";

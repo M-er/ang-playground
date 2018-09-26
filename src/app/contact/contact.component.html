@@ -1,4 +1,4 @@
-<div class="col-sm-6 float-right">
+<div style="height: 1px;" class="col-sm-4 float-right">
 	<div class="jumbotron box-contacto">
 		<h2 class="display-5">Contactame</h2>
 		<div class="container form-container">
@@ -22,7 +22,7 @@
 					<textarea matInput name="mensaje" placeholder="Mensaje" [(ngModel)]="mensaje" required></textarea>
 				</mat-form-field>
 				<div class="button-row">
-					<button mat-raised-button color="primary"><mat-icon class="example-icon">done</mat-icon> Enviar</button>
+					<button [disabled]=" nombre === '' || apellido === '' || motivo === '' || email === '' || mensaje === ''" mat-raised-button color="primary"><mat-icon class="example-icon">done</mat-icon> Enviar</button>
 					<button (click)="clean($event)" mat-raised-button color="warn"><mat-icon class="example-icon">clear_all</mat-icon> Limpiar </button>
 				</div>
 			</form>
